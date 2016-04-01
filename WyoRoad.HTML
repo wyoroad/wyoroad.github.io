@@ -1,0 +1,40 @@
+<html>
+<head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    var sites = [
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=321",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=322",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=323",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=324",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=325",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=326",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=327",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=328",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=329",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=330",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=331",
+	"http://www.wyoroad.info/pls/Browse/RCT.LocationSegments?SelectedSegment=332"
+    ];
+    var currentSite = sites.length;
+
+    $(document).ready(function () {
+      var $iframe = $("iframe").attr("src","http://www.google.com");
+      setInterval(function() {
+        (currentSite == 0) ? currentSite = sites.length - 1 : currentSite = currentSite -1;
+        $iframe.attr("src",sites[currentSite]);
+      }, 7500);
+    });
+  </script>  
+  <style type="text/css" media="screen">
+    iframe {
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe></iframe>
+</body>
+</html>
